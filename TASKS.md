@@ -56,6 +56,7 @@ Domain: roastlevels.webcytz.com
 - [x] Ensure all pages have proper meta descriptions and titles
 - [x] Test responsive design on mobile viewports
 - [x] Verify all internal links work correctly
+- [ ] Fix: Add sitemap.xml for SEO
 
 ## Completion
 - [x] FINAL: Verify site is complete, functional, and deployed

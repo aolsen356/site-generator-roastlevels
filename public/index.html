@@ -3,35 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roast Levels - Coming Soon</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: #1a1a1a;
-            color: #fff;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            color: #888;
-        }
-    </style>
+    <title>Roast Levels - Coffee Roast Comparison Guide</title>
+    <meta name="description" content="Compare coffee roast levels from light to dark. Discover flavor profiles, caffeine content, and the best brewing methods for each roast level.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38BF85QJG1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-38BF85QJG1');
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Roast Levels</h1>
-        <p>Coming Soon</p>
-    </div>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span>&#9749;</span> Roast Levels
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/roasts/light.html">Light Roast</a></li>
+                    <li><a href="/roasts/medium.html">Medium Roast</a></li>
+                    <li><a href="/roasts/dark.html">Dark Roast</a></li>
+                    <li><a href="/charts.html">Comparison Charts</a></li>
+                    <li><a href="/brewing/">Brewing Guides</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Discover Your Perfect Roast</h1>
+                <p>From bright and fruity light roasts to bold and smoky dark roasts, find the coffee that matches your taste preferences.</p>
+
+                <div class="roast-spectrum">
+                    <a href="/roasts/light.html" class="roast-spectrum-bar light">
+                        <span>Light</span>
+                    </a>
+                    <a href="/roasts/medium-light.html" class="roast-spectrum-bar medium-light">
+                        <span>Med-Light</span>
+                    </a>
+                    <a href="/roasts/medium.html" class="roast-spectrum-bar medium">
+                        <span>Medium</span>
+                    </a>
+                    <a href="/roasts/medium-dark.html" class="roast-spectrum-bar medium-dark">
+                        <span>Med-Dark</span>
+                    </a>
+                    <a href="/roasts/dark.html" class="roast-spectrum-bar dark">
+                        <span>Dark</span>
+                    </a>
+                </div>
+
+                <a href="/charts.html" class="btn btn-primary">View Comparison Charts</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Quick Roast Comparison</h2>
+                    <p>See how different roast levels compare across key characteristics</p>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Roast Level</th>
+                                <th>Flavor Profile</th>
+                                <th>Acidity</th>
+                                <th>Body</th>
+                                <th>Caffeine</th>
+                                <th>Best Brewing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="roast-badge light">Light</span></td>
+                                <td>Fruity, Floral, Tea-like</td>
+                                <td>High</td>
+                                <td>Light</td>
+                                <td>Highest</td>
+                                <td>Pour Over, Aeropress</td>
+                            </tr>
+                            <tr>
+                                <td><span class="roast-badge medium-light">Medium-Light</span></td>
+                                <td>Balanced, Nutty, Citrus</td>
+                                <td>Medium-High</td>
+                                <td>Light-Medium</td>
+                                <td>High</td>
+                                <td>Pour Over, Drip</td>
+                            </tr>
+                            <tr>
+                                <td><span class="roast-badge medium">Medium</span></td>
+                                <td>Caramel, Chocolate, Balanced</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td>Drip, French Press</td>
+                            </tr>
+                            <tr>
+                                <td><span class="roast-badge medium-dark">Medium-Dark</span></td>
+                                <td>Rich, Spicy, Bittersweet</td>
+                                <td>Low-Medium</td>
+                                <td>Full</td>
+                                <td>Medium-Low</td>
+                                <td>Espresso, French Press</td>
+                            </tr>
+                            <tr>
+                                <td><span class="roast-badge dark">Dark</span></td>
+                                <td>Smoky, Bold, Bitter</td>
+                                <td>Low</td>
+                                <td>Heavy</td>
+                                <td>Lowest</td>
+                                <td>Espresso, Cold Brew</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Explore Roast Levels</h2>
+                    <p>Learn everything about each roast level, from origin flavors to brewing recommendations</p>
+                </div>
+
+                <div class="card-grid">
+                    <a href="/roasts/light.html" class="card" style="border-top: 4px solid var(--light-roast); text-decoration: none; color: inherit;">
+                        <h3>Light Roast</h3>
+                        <p>Bright acidity with delicate floral and fruity notes. Retains the most origin characteristics and has the highest caffeine content.</p>
+                        <span class="btn btn-outline" style="margin-top: var(--space-md);">Learn More &rarr;</span>
+                    </a>
+
+                    <a href="/roasts/medium.html" class="card" style="border-top: 4px solid var(--medium-roast); text-decoration: none; color: inherit;">
+                        <h3>Medium Roast</h3>
+                        <p>The perfect balance between origin flavors and roast character. Sweet caramel and chocolate notes with moderate acidity.</p>
+                        <span class="btn btn-outline" style="margin-top: var(--space-md);">Learn More &rarr;</span>
+                    </a>
+
+                    <a href="/roasts/dark.html" class="card" style="border-top: 4px solid var(--dark-roast); text-decoration: none; color: inherit;">
+                        <h3>Dark Roast</h3>
+                        <p>Bold and intense with smoky, bittersweet flavors. Full body with low acidity, perfect for espresso lovers.</p>
+                        <span class="btn btn-outline" style="margin-top: var(--space-md);">Learn More &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Popular Brewing Methods</h2>
+                    <p>Find the right brewing method to bring out the best in your favorite roast</p>
+                </div>
+
+                <div class="card-grid">
+                    <a href="/brewing/pour-over.html" class="brew-card" style="text-decoration: none; color: inherit;">
+                        <div class="brew-icon">&#9749;</div>
+                        <h3>Pour Over</h3>
+                        <p>Clean, bright flavors. Best for light to medium roasts.</p>
+                    </a>
+
+                    <a href="/brewing/french-press.html" class="brew-card" style="text-decoration: none; color: inherit;">
+                        <div class="brew-icon">&#127861;</div>
+                        <h3>French Press</h3>
+                        <p>Full-bodied and rich. Excellent for medium to dark roasts.</p>
+                    </a>
+
+                    <a href="/brewing/espresso.html" class="brew-card" style="text-decoration: none; color: inherit;">
+                        <div class="brew-icon">&#9752;</div>
+                        <h3>Espresso</h3>
+                        <p>Concentrated and intense. Shines with medium-dark to dark roasts.</p>
+                    </a>
+
+                    <a href="/brewing/cold-brew.html" class="brew-card" style="text-decoration: none; color: inherit;">
+                        <div class="brew-icon">&#10052;</div>
+                        <h3>Cold Brew</h3>
+                        <p>Smooth and sweet. Works great with any roast level.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Caffeine Content by Roast</h2>
+                    <p>Contrary to popular belief, lighter roasts contain slightly more caffeine</p>
+                </div>
+
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div class="flavor-profile">
+                        <div class="flavor-item">
+                            <label>Light Roast</label>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 95%; background: var(--light-roast);"></div>
+                            </div>
+                            <span class="value">95</span>
+                        </div>
+                        <div class="flavor-item">
+                            <label>Medium-Light</label>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 90%; background: var(--medium-light);"></div>
+                            </div>
+                            <span class="value">90</span>
+                        </div>
+                        <div class="flavor-item">
+                            <label>Medium</label>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 85%; background: var(--medium-roast);"></div>
+                            </div>
+                            <span class="value">85</span>
+                        </div>
+                        <div class="flavor-item">
+                            <label>Medium-Dark</label>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 80%; background: var(--medium-dark);"></div>
+                            </div>
+                            <span class="value">80</span>
+                        </div>
+                        <div class="flavor-item">
+                            <label>Dark Roast</label>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 75%; background: var(--dark-roast);"></div>
+                            </div>
+                            <span class="value">75</span>
+                        </div>
+                    </div>
+                    <p class="text-center mt-md" style="color: var(--text-secondary); font-size: 0.85rem;">
+                        *Relative caffeine content per gram of coffee beans. Actual caffeine varies by origin and brewing method.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container text-center">
+                <h2>Ready to Find Your Perfect Roast?</h2>
+                <p style="max-width: 500px; margin: 0 auto var(--space-xl);">
+                    Explore our detailed comparison charts to find the roast level that matches your taste preferences.
+                </p>
+                <a href="/charts.html" class="btn btn-primary">View Full Comparison Charts</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Roast Levels</h4>
+                    <ul>
+                        <li><a href="/roasts/light.html">Light Roast</a></li>
+                        <li><a href="/roasts/medium-light.html">Medium-Light Roast</a></li>
+                        <li><a href="/roasts/medium.html">Medium Roast</a></li>
+                        <li><a href="/roasts/medium-dark.html">Medium-Dark Roast</a></li>
+                        <li><a href="/roasts/dark.html">Dark Roast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Brewing Guides</h4>
+                    <ul>
+                        <li><a href="/brewing/pour-over.html">Pour Over</a></li>
+                        <li><a href="/brewing/french-press.html">French Press</a></li>
+                        <li><a href="/brewing/espresso.html">Espresso</a></li>
+                        <li><a href="/brewing/cold-brew.html">Cold Brew</a></li>
+                        <li><a href="/brewing/drip.html">Drip Coffee</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/charts.html">Comparison Charts</a></li>
+                        <li><a href="/products.html">Recommended Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+                        Roast Levels helps coffee lovers understand the differences between roast levels and find their perfect cup.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Roast Levels. As an Amazon Associate, we earn from qualifying purchases.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

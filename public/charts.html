@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Roast Comparison Charts - Flavor, Caffeine & Brewing</title>
+    <meta name="description" content="Compare coffee roast levels side by side. Visual charts showing flavor profiles, caffeine content, and brewing method compatibility for light to dark roasts.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38BF85QJG1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-38BF85QJG1');
+    </script>
+    <style>
+        .chart-section { margin-bottom: var(--space-3xl); }
+        .chart-grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        .chart-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+        .chart-row:last-child { border-bottom: none; }
+        .chart-label { font-weight: 600; color: var(--text-secondary); }
+        .chart-bars {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-sm);
+        }
+        .bar-container { text-align: center; }
+        .bar {
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            margin-bottom: var(--space-xs);
+        }
+        .bar-fill {
+            width: 100%;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            transition: height 0.3s ease;
+        }
+        .bar-value {
+            font-size: 0.75rem;
+            color: white;
+            font-weight: 600;
+            padding: var(--space-xs);
+        }
+        .bar-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .matrix-table th, .matrix-table td {
+            padding: var(--space-md);
+            text-align: center;
+            border: 1px solid var(--bg-secondary);
+        }
+        .matrix-table th {
+            background: var(--bg-dark);
+            color: white;
+            font-weight: 600;
+        }
+        .matrix-table th:first-child { text-align: left; }
+        .matrix-table td:first-child {
+            font-weight: 600;
+            text-align: left;
+            background: var(--bg-secondary);
+        }
+        .compat-icon {
+            font-size: 1.2rem;
+        }
+        .compat-best { color: #22c55e; }
+        .compat-good { color: #84cc16; }
+        .compat-ok { color: #facc15; }
+        .compat-poor { color: #f97316; }
+        @media (max-width: 768px) {
+            .chart-row { grid-template-columns: 1fr; }
+            .chart-label { margin-bottom: var(--space-sm); }
+            .bar { height: 80px; }
+            .matrix-table { font-size: 0.85rem; }
+            .matrix-table th, .matrix-table td { padding: var(--space-sm); }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo"><span>&#9749;</span> Roast Levels</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/roasts/light.html">Light Roast</a></li>
+                    <li><a href="/roasts/medium.html">Medium Roast</a></li>
+                    <li><a href="/roasts/dark.html">Dark Roast</a></li>
+                    <li><a href="/charts.html" class="active">Comparison Charts</a></li>
+                    <li><a href="/brewing/">Brewing Guides</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Coffee Roast Comparison Charts</h1>
+                <p>Visual breakdowns of how different roast levels compare across flavor, caffeine, and brewing compatibility.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="chart-section">
+                    <div class="section-title">
+                        <h2>Flavor Profile Comparison</h2>
+                        <p>How each roast level rates across key flavor characteristics</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="chart-grid">
+                            <div class="chart-row">
+                                <div class="chart-label">Acidity</div>
+                                <div class="chart-bars">
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 90%; background: var(--light-roast);">
+                                                <span class="bar-value">High</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 75%; background: var(--medium-light);">
+                                                <span class="bar-value">Med-Hi</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 55%; background: var(--medium-roast);">
+                                                <span class="bar-value">Med</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Medium</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 30%; background: var(--medium-dark);">
+                                                <span class="bar-value">Low</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Dark</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 15%; background: var(--dark-roast);">
+                                                <span class="bar-value">V.Low</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Dark</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-row">
+                                <div class="chart-label">Body</div>
+                                <div class="chart-bars">
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 35%; background: var(--light-roast);">
+                                                <span class="bar-value">Light</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 45%; background: var(--medium-light);">
+                                                <span class="bar-value">Lt-Med</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 55%; background: var(--medium-roast);">
+                                                <span class="bar-value">Med</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Medium</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 80%; background: var(--medium-dark);">
+                                                <span class="bar-value">Full</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Dark</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 90%; background: var(--dark-roast);">
+                                                <span class="bar-value">Heavy</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Dark</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-row">
+                                <div class="chart-label">Sweetness</div>
+                                <div class="chart-bars">
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 70%; background: var(--light-roast);">
+                                                <span class="bar-value">Med-Hi</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 75%; background: var(--medium-light);">
+                                                <span class="bar-value">Med-Hi</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 80%; background: var(--medium-roast);">
+                                                <span class="bar-value">High</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Medium</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 55%; background: var(--medium-dark);">
+                                                <span class="bar-value">Med</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Dark</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 25%; background: var(--dark-roast);">
+                                                <span class="bar-value">Low</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Dark</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-row">
+                                <div class="chart-label">Bitterness</div>
+                                <div class="chart-bars">
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 20%; background: var(--light-roast);">
+                                                <span class="bar-value">Low</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 25%; background: var(--medium-light);">
+                                                <span class="bar-value">Low</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Light</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 35%; background: var(--medium-roast);">
+                                                <span class="bar-value">Low-Med</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Medium</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 60%; background: var(--medium-dark);">
+                                                <span class="bar-value">Med-Hi</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Med-Dark</div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar">
+                                            <div class="bar-fill" style="height: 85%; background: var(--dark-roast);">
+                                                <span class="bar-value">High</span>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Dark</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="chart-section">
+                    <div class="section-title">
+                        <h2>Caffeine Content Comparison</h2>
+                        <p>Relative caffeine levels by weight (lighter roasts have slightly more)</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="chart-bars" style="max-width: 600px; margin: 0 auto;">
+                            <div class="bar-container">
+                                <div class="bar" style="height: 150px;">
+                                    <div class="bar-fill" style="height: 95%; background: var(--light-roast);">
+                                        <span class="bar-value">95</span>
+                                    </div>
+                                </div>
+                                <div class="bar-label">Light</div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar" style="height: 150px;">
+                                    <div class="bar-fill" style="height: 90%; background: var(--medium-light);">
+                                        <span class="bar-value">90</span>
+                                    </div>
+                                </div>
+                                <div class="bar-label">Med-Light</div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar" style="height: 150px;">
+                                    <div class="bar-fill" style="height: 85%; background: var(--medium-roast);">
+                                        <span class="bar-value">85</span>
+                                    </div>
+                                </div>
+                                <div class="bar-label">Medium</div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar" style="height: 150px;">
+                                    <div class="bar-fill" style="height: 80%; background: var(--medium-dark);">
+                                        <span class="bar-value">80</span>
+                                    </div>
+                                </div>
+                                <div class="bar-label">Med-Dark</div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar" style="height: 150px;">
+                                    <div class="bar-fill" style="height: 75%; background: var(--dark-roast);">
+                                        <span class="bar-value">75</span>
+                                    </div>
+                                </div>
+                                <div class="bar-label">Dark</div>
+                            </div>
+                        </div>
+                        <p class="text-center mt-lg" style="color: var(--text-secondary); font-size: 0.85rem;">
+                            *Relative units per gram of coffee. Difference is approximately 5-10% between light and dark.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="chart-section">
+                    <div class="section-title">
+                        <h2>Brewing Method Compatibility</h2>
+                        <p>Which brewing methods work best with each roast level</p>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th><span class="roast-badge light">Light</span></th>
+                                    <th><span class="roast-badge medium-light">Med-Light</span></th>
+                                    <th><span class="roast-badge medium">Medium</span></th>
+                                    <th><span class="roast-badge medium-dark">Med-Dark</span></th>
+                                    <th><span class="roast-badge dark">Dark</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pour Over</td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-ok">&#9733;</span></td>
+                                    <td><span class="compat-icon compat-poor">&#9675;</span></td>
+                                </tr>
+                                <tr>
+                                    <td>French Press</td>
+                                    <td><span class="compat-icon compat-ok">&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Espresso</td>
+                                    <td><span class="compat-icon compat-ok">&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Drip Coffee</td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-ok">&#9733;</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cold Brew</td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Aeropress</td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-ok">&#9733;</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Moka Pot</td>
+                                    <td><span class="compat-icon compat-poor">&#9675;</span></td>
+                                    <td><span class="compat-icon compat-ok">&#9733;</span></td>
+                                    <td><span class="compat-icon compat-good">&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                    <td><span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card mt-xl" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <h4>Legend</h4>
+                        <p style="margin-bottom: 0;">
+                            <span class="compat-icon compat-best">&#9733;&#9733;&#9733;</span> Best match - optimal pairing<br>
+                            <span class="compat-icon compat-good">&#9733;&#9733;</span> Good match - works well<br>
+                            <span class="compat-icon compat-ok">&#9733;</span> OK - will work but not ideal<br>
+                            <span class="compat-icon compat-poor">&#9675;</span> Not recommended
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Complete Roast Comparison</h2>
+                    <p>All key characteristics at a glance</p>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Characteristic</th>
+                                <th>Light</th>
+                                <th>Medium-Light</th>
+                                <th>Medium</th>
+                                <th>Medium-Dark</th>
+                                <th>Dark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Temperature</strong></td>
+                                <td>356-401°F</td>
+                                <td>401-410°F</td>
+                                <td>410-428°F</td>
+                                <td>428-446°F</td>
+                                <td>446-482°F</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bean Color</strong></td>
+                                <td>Light brown</td>
+                                <td>Medium brown</td>
+                                <td>Medium brown</td>
+                                <td>Dark brown</td>
+                                <td>Very dark</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Surface Oil</strong></td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>Minimal</td>
+                                <td>Some</td>
+                                <td>Oily</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Origin Flavor</strong></td>
+                                <td>Dominant</td>
+                                <td>Prominent</td>
+                                <td>Balanced</td>
+                                <td>Subtle</td>
+                                <td>Masked</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Roast Flavor</strong></td>
+                                <td>Subtle</td>
+                                <td>Developing</td>
+                                <td>Balanced</td>
+                                <td>Prominent</td>
+                                <td>Dominant</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Main Notes</strong></td>
+                                <td>Fruity, Floral</td>
+                                <td>Nutty, Citrus</td>
+                                <td>Caramel, Chocolate</td>
+                                <td>Bittersweet, Spicy</td>
+                                <td>Smoky, Bold</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Best For</strong></td>
+                                <td>Pour over, Aeropress</td>
+                                <td>Pour over, Drip</td>
+                                <td>Drip, French Press</td>
+                                <td>Espresso, French Press</td>
+                                <td>Espresso, Cold Brew</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container text-center">
+                <h2>Find Your Perfect Roast</h2>
+                <p style="max-width: 500px; margin: 0 auto var(--space-xl);">
+                    Now that you understand the differences, explore each roast level in detail.
+                </p>
+                <div class="roast-spectrum mt-xl" style="justify-content: center;">
+                    <a href="/roasts/light.html" class="roast-spectrum-bar light"><span>Light</span></a>
+                    <a href="/roasts/medium-light.html" class="roast-spectrum-bar medium-light"><span>Med-Light</span></a>
+                    <a href="/roasts/medium.html" class="roast-spectrum-bar medium"><span>Medium</span></a>
+                    <a href="/roasts/medium-dark.html" class="roast-spectrum-bar medium-dark"><span>Med-Dark</span></a>
+                    <a href="/roasts/dark.html" class="roast-spectrum-bar dark"><span>Dark</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Roast Levels</h4>
+                    <ul>
+                        <li><a href="/roasts/light.html">Light Roast</a></li>
+                        <li><a href="/roasts/medium-light.html">Medium-Light Roast</a></li>
+                        <li><a href="/roasts/medium.html">Medium Roast</a></li>
+                        <li><a href="/roasts/medium-dark.html">Medium-Dark Roast</a></li>
+                        <li><a href="/roasts/dark.html">Dark Roast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Brewing Guides</h4>
+                    <ul>
+                        <li><a href="/brewing/pour-over.html">Pour Over</a></li>
+                        <li><a href="/brewing/french-press.html">French Press</a></li>
+                        <li><a href="/brewing/espresso.html">Espresso</a></li>
+                        <li><a href="/brewing/cold-brew.html">Cold Brew</a></li>
+                        <li><a href="/brewing/drip.html">Drip Coffee</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/charts.html">Comparison Charts</a></li>
+                        <li><a href="/products.html">Recommended Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Roast Levels helps coffee lovers understand the differences between roast levels and find their perfect cup.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Roast Levels. As an Amazon Associate, we earn from qualifying purchases.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

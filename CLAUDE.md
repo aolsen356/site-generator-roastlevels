@@ -8,7 +8,7 @@ Domain: roastlevels.webcytz.com
 Coffee roast comparison charts showing flavor profiles, caffeine content, and brewing method pairings for light to dark roasts
 
 ## Status
-In development - tasks being processed by site-agent
+COMPLETE - Site is live at https://roastlevels.webcytz.com
 
 ## Configuration
 - Amazon Associate Tag: kcwd-20

@@ -57,7 +57,7 @@ Domain: roastlevels.webcytz.com
 - [x] Test responsive design on mobile viewports
 - [x] Verify all internal links work correctly
 - [x] Fix: Add sitemap.xml for SEO
-- [ ] Fix: Remove or complete Moka Pot "Guide coming soon" placeholder on brewing/index.html
+- [x] Fix: Remove or complete Moka Pot "Guide coming soon" placeholder on brewing/index.html
 
 ## Completion
 - [x] FINAL: Verify site is complete, functional, and deployed

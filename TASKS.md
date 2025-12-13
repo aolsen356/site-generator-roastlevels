@@ -8,7 +8,7 @@ Domain: roastlevels.webcytz.com
 
 ## Bootstrap (do not modify these)
 - [x] Initialize git repository
-- [ ] Create GitHub repo (site-generator-roastlevels)
+- [x] Create GitHub repo (site-generator-roastlevels)
 - [ ] Set up Cloudflare hosting and custom domain
 
 ## Planning
